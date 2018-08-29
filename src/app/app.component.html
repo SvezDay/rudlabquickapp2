@@ -1,0 +1,46 @@
+<div class="container-fluid custm-ft-medium custm-ft-sz">
+  <ng4-loading-spinner > </ng4-loading-spinner>
+  <!-- NAVBAR -->
+  <div class="row">
+    <div class="col" style="padding:0; border-bottom: 1px solid gainsboro; ">
+      <nav style="display:block;" class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="height:3rem;">
+          <a routerLink="/" routerLinkActive="active" class="navbar-brand">Huub</a>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/games">Games</a>
+            <a class="nav-item nav-link" routerLink="/document">Documentation</a>
+            <a class="nav-item nav-link" >Activity</a>
+            <a class="nav-item nav-link" >Board</a>
+            <a class="nav-item nav-link" *ngIf="Auth.isLogged()" routerLink="/admin">Admin</a>
+            <a class="nav-item nav-link" routerLink="/authenticate" *ngIf="!Auth.isLogged()">Sign in</a>
+            <a class="nav-item nav-link" (click)="Auth.logout()" *ngIf="Auth.isLogged()">log out</a>
+            <a class="nav-item nav-link" (click)="Auth.logout()" *ngIf="Auth.isLogged()"><i class="material-icons custm-ft-light">perm_identity</i></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <button type="button" class="btn btn-secondary" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" name="button"><i class="material-icons custm-ft-light">menu</i></button>
+              <ul class="dropdown-menu">
+                <li><a class="nav-item nav-link" routerLink="/games">Games</a><li>
+                <li><a class="nav-item nav-link" routerLink="/document">Documentation</a><li>
+                <li><a class="nav-item nav-link" >Activity</a><li>
+                <li><a class="nav-item nav-link" >Board</a><li>
+                <li><a class="nav-item nav-link" *ngIf="Auth.isLogged()" routerLink="/admin">Admin</a><li>
+                <li><a class="nav-item nav-link" routerLink="/authenticate" *ngIf="!Auth.isLogged()">Sign in</a><li>
+                <li><a class="nav-item nav-link" (click)="Auth.logout()" *ngIf="Auth.isLogged()">log out</a><li>
+                <li><a class="nav-item nav-link" (click)="Auth.logout()" *ngIf="Auth.isLogged()"><i class="material-icons custm-ft-light">perm_identity</i></a><li>
+              </ul>
+            </li>
+          </ul>
+       </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="main-content" >
+    <div class="router-outlet" style="">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
