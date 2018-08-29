@@ -17,7 +17,7 @@ import {HeadGraph, Tree} from '../_models/graph.class';
   moduleId: module.id
   ,selector: 'app-document'
   ,templateUrl: './document.component.html'
-  ,styleUrls: ['./document.component.css', '../app.component.css', '../free/free.component.css']
+  ,styleUrls: ['./document.component.scss', '../app.component.scss', '../free/free.component.scss']
   ,providers:[ApiService, NavigationService, UtilsService]
 })
 export class DocumentComponent implements OnInit {

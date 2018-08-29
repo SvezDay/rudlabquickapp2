@@ -26,7 +26,7 @@ import {Common} from '../_models/common.data';
   moduleId: module.id
   ,selector: 'app-book'
   ,templateUrl: './book.component.html'
-  ,styleUrls: ['./book.component.css', '../app.component.css', '../free/free.component.css']
+  ,styleUrls: ['./book.component.scss', '../app.component.scss', '../free/free.component.scss']
   ,providers:[ApiService, UtilsService, NavigationService]
 })
 export class BookComponent implements AfterViewInit {

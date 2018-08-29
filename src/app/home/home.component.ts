@@ -5,7 +5,7 @@ import {NavigationService} from '../_core/navigation.service';
   moduleId: module.id
   ,selector: 'home'
   ,templateUrl: './home.component.html'
-  ,styleUrls: ['./home.component.css', '../app.component.css']
+  ,styleUrls: ['./home.component.scss', '../app.component.scss']
   ,providers:[NavigationService]
 })
 export class HomeComponent implements OnInit {

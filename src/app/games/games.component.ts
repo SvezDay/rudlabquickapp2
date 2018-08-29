@@ -8,7 +8,7 @@ import {UtilsService} from '../_core/utils.service';
   moduleId: module.id
   , selector: 'app-games'
   , templateUrl: './games.component.html'
-  , styleUrls: ['./games.component.css', '../free/free.component.css', '../app.component.css']
+  , styleUrls: ['./games.component.scss', '../free/free.component.scss', '../app.component.scss']
   , providers:[ApiService, NavigationService, UtilsService]
 })
 export class GamesComponent implements OnInit {

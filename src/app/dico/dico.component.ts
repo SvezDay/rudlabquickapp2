@@ -18,7 +18,7 @@ import {Common} from '../_models/common.data';
   moduleId:module.id
   ,selector:'app-dico'
   ,templateUrl:'./dico.component.html'
-  ,styleUrls:['./dico.component.css', '../app.component.css', '../free/free.component.css']
+  ,styleUrls:['./dico.component.scss', '../app.component.scss', '../free/free.component.scss']
   ,providers:[ApiService, NavigationService, UtilsService]
 })
 export class DicoComponent implements OnInit {

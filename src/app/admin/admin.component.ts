@@ -3,7 +3,7 @@ import {ApiService} from '../_core/api.service';
 @Component({
   selector: 'app-admin'
   , templateUrl: './admin.component.html'
-  , styleUrls: ['./admin.component.css', '../app.component.css', '../free/free.component.css']
+  , styleUrls: ['./admin.component.scss', '../app.component.scss', '../free/free.component.scss']
   , providers: [ApiService]
 })
 export class AdminComponent implements OnInit {

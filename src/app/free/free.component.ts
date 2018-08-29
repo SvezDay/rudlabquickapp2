@@ -26,7 +26,7 @@ import {Common} from '../_models/common.data';
   moduleId: module.id
   ,selector: 'app-free'
   ,templateUrl: './free.component.html'
-  ,styleUrls: ['./free.component.css', '../app.component.css']
+  ,styleUrls: ['./free.component.scss', '../app.component.scss']
   ,providers:[ApiService, UtilsService, NavigationService]
 })
 export class FreeComponent implements AfterViewInit {

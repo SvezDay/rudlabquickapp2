@@ -15,7 +15,7 @@ import {Graph, HeadGraph} from '../_models/graph.class';
   moduleId: module.id
   ,selector: 'app-doc-root'
   ,templateUrl: './doc-root.component.html'
-  ,styleUrls: ['./doc-root.component.css', '../app.component.css']
+  ,styleUrls: ['./doc-root.component.scss', '../app.component.scss']
   ,providers:[ApiService, NavigationService]
 })
 export class DocRootComponent implements OnInit {

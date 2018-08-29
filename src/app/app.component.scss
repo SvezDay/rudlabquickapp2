@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/mixins/_breakpoints';
 /* .custm-ft-flash { color: blue !important; } */
 .custm-ft-flash { color: orange !important; }
 .custm-ft-neutral { color: white; }

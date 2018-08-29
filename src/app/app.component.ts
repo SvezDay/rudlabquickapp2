@@ -10,7 +10,7 @@ import {NavigationService} from './_core/navigation.service';
 @Component({
   selector: 'app-root'
   , templateUrl: './app.component.html'
-  , styleUrls: ['./app.component.css']
+  , styleUrls: ['./app.component.scss']
   , providers:[NavigationService]
 })
 export class AppComponent {

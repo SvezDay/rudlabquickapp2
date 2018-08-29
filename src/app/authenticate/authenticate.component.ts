@@ -7,7 +7,7 @@ import {AuthenticationService} from '../_core/authentication.service';
   moduleId: module.id,
   selector: 'app-authenticate',
   templateUrl: './authenticate.component.html',
-  styleUrls: ['./authenticate.component.css'],
+  styleUrls: ['./authenticate.component.scss'],
   providers:[AuthenticationService]
 })
 export class AuthenticateComponent implements OnInit {

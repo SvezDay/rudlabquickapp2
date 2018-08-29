@@ -15,7 +15,7 @@ import {SetGame} from '../_models/graph.class';
   moduleId: module.id
   ,selector: 'app-games-recall-one'
   ,templateUrl: './games-recall-one.component.html'
-  ,styleUrls: ['./games-recall-one.component.css', '../free/free.component.css', '../app.component.css']
+  ,styleUrls: ['./games-recall-one.component.scss', '../free/free.component.scss', '../app.component.scss']
   ,providers:[ApiService, NavigationService, UtilsService, IntercomService]
 })
 export class GamesRecallOneComponent implements OnInit {

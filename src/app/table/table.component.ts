@@ -27,7 +27,7 @@ import {Common} from '../_models/common.data';
   moduleId: module.id
   ,selector: 'app-table'
   ,templateUrl: './table.component.html'
-  ,styleUrls: ['./table.component.css', '../app.component.css', '../free/free.component.css']
+  ,styleUrls: ['./table.component.scss', '../app.component.scss', '../free/free.component.scss']
   ,providers:[ApiService, UtilsService, NavigationService]
 })
 export class TableComponent implements OnInit {
