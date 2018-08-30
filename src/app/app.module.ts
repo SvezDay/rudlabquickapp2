@@ -44,6 +44,7 @@ import {TabulationDirective} from './_directives/tabulation.directive';
 import {ClickOutsideDirective} from './_directives/clickOutside.directive';
 import {LabelComponent} from './_directives/label.directive';
 import {ModelIconComponent} from './_directives/model-icon.component';
+import { ActivityComponent } from './activity/activity.component';
 
 
 @NgModule({
@@ -80,7 +81,7 @@ import {ModelIconComponent} from './_directives/model-icon.component';
     , TabulationDirective
     , ClickOutsideDirective
     , LabelComponent
-    , ModelIconComponent
+    , ModelIconComponent, ActivityComponent
     // LIBS
     // , ContextMenuComponent
   ]

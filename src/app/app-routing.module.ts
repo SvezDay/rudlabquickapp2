@@ -9,6 +9,7 @@ import {DocumentComponent} from './document/document.component';
 import {GamesComponent} from './games/games.component';
 import {GamesRecallOneComponent} from './games-recall-one/games-recall-one.component';
 import { AdminComponent } from './admin/admin.component';
+import { ActivityComponent } from './activity/activity.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
    ,{path: 'games', component: GamesComponent, canActivate: [AuthGuard]}
    ,{path: 'games-recall-one', component: GamesRecallOneComponent, canActivate: [AuthGuard]}
    ,{path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
+   ,{path: 'activity', component: ActivityComponent, canActivate: [AuthGuard]}
 
    ,{path: '**', redirectTo: '', pathMatch: 'full'} // reload another component, in this case, the appComponent - Need to be modified
 ];
