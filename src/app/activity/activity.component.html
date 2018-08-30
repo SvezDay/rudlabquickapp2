@@ -3,7 +3,7 @@
   <div [contextMenu]="basicMenu" [contextMenuSubject]="null" class="custm-document-nest-container" style="container-fluid h-100">
     <div class="">
 
-      <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
+      <!-- <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
         <h5>Empty document</h5>
       </div>
 
@@ -13,20 +13,20 @@
             <a class="btn"  (click)="onDocument(item)"><ModelIcon [model]="item.index.model"></ModelIcon> {{item.title?.value}}</a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- TEXT NOTES -->
-      <div class="row custm-doc-row-note custm-bg-neutral shadow-sm" *ngIf="!!doc.notes?.length"> <!-- *ngIf="!!doc.notes.length" -->
+      <!-- <div class="row custm-doc-row-note custm-bg-neutral shadow-sm" *ngIf="!!doc.notes?.length"> 
         <ul class="" dnd-sortable-container [sortableData]="doc.notes">
           <li *ngFor="let note of doc.notes; let i = index" dnd-sortable [sortableIndex]="i" (onDropSuccess)="onDropSuccess()">
             <div class="custm-doc-note custm-zone-note" (click)="selectedNote.isEmpty() && selectNote($event, note, i)" (clickOutside)="updateNote()" [attachOutsideOnClick]="true" style="overflow:auto">
-              <!-- LABEL -->
+
               <span class="custm-zone-label"(click)="selectNoteLabel($event, note, i)"><Label [code_label]="note.code_label" style="margin:0;"></Label></span>
-              <!-- VALUE -->
+
               <p style="white-space:pre-wrap" *ngIf="selectedNote?.uuid != note.uuid">{{note.value}}</p>
               <div class="custm-div-textarea" *ngIf="doc.title?.value!='Home' && selectedNote?.uuid == note.uuid">
                 <textarea type="textarea" [id]="note.uuid" class="custm-textarea custm-textarea-large custm-bg-medium" [(ngModel)]="selectedNote.value" aria-describedby="basic-addon1"></textarea>
               </div>
-              <!-- DESCENDANT -->
+
               <div class="custm-doc-descendant custm-zone-descendant" *ngIf="note.descendant">
                 <ul class="">
                   <li *ngFor="let itemz of note.descendant">
@@ -38,7 +38,7 @@
 
           </li>
         </ul>
-      </div>
+      </div> -->
 
     </div>
 

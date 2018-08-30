@@ -41,7 +41,7 @@ export class TableComponent implements OnInit {
   @ViewChild('labelMenu') public labelMenu: ContextMenuComponent;
 
 
-  private component_name = "book";
+  private component_name = "table";
   public doc: any = {};
 
   public originalNoteOrder: any = {};

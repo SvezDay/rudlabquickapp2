@@ -21,9 +21,11 @@ import {HeadGraph, ExtendGraph, Tree} from '../_models/graph.class';
 import {Common} from '../_models/common.data';
 
 @Component({
-  selector: 'app-activity',
-  templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.scss', '../app.component.scss', '../free/free.component.scss']
+  moduleId: module.id
+  ,selector: 'app-activity'
+  ,templateUrl: './activity.component.html'
+  ,styleUrls: ['./activity.component.scss', '../app.component.scss', '../free/free.component.scss']
+  ,providers:[ApiService, UtilsService, NavigationService]
 })
 export class ActivityComponent implements OnInit {
   @Input() public hg: HeadGraph;
@@ -52,20 +54,20 @@ export class ActivityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getMain();
+    // this.getMain();
   }
 
   // CREATE   --------------------------------------------------------------------
   // READ   ----------------------------------------------------------------------
-  public getMain() :void{
-    // console.log("getMain free");
-    this.Api.query('post', '/api/activity/read', this.hg.index).subscribe( data => {
-      this.selectedNote = new Note();
-      this.doc = new ExtendGraph();
-      this.doc.createExtendGraph(data.data)
-      this.originalNoteOrder = this.Utils.getNoteOrder(this.doc.notes);
-    }, error=>{console.log(error)})
-  }
+  // public getMain() :void{
+  //   // console.log("getMain free");
+  //   this.Api.query('post', '/api/activity/read', this.hg.index).subscribe( data => {
+  //     this.selectedNote = new Note();
+  //     this.doc = new ExtendGraph();
+  //     this.doc.createExtendGraph(data.data)
+  //     this.originalNoteOrder = this.Utils.getNoteOrder(this.doc.notes);
+  //   }, error=>{console.log(error)})
+  // }
   // UPDATE   --------------------------------------------------------------------
   // DELETE  ---------------------------------------------------------------------
 
