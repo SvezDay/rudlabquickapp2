@@ -1,9 +1,8 @@
 <!-- <ng4-loading-spinner> </ng4-loading-spinner> -->
-  <!-- CONTENT -->
-  <div [contextMenu]="basicMenu" [contextMenuSubject]="null" class="custm-document-nest-container" style="container-fluid h-100">
+  <!-- <div [contextMenu]="basicMenu" [contextMenuSubject]="null" class="custm-document-nest-container" style="container-fluid h-100">
     <div class="">
 
-      <!-- <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
+      <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
         <h5>Empty document</h5>
       </div>
 
@@ -13,9 +12,8 @@
             <a class="btn"  (click)="onDocument(item)"><ModelIcon [model]="item.index.model"></ModelIcon> {{item.title?.value}}</a>
           </li>
         </ul>
-      </div> -->
-      <!-- TEXT NOTES -->
-      <!-- <div class="row custm-doc-row-note custm-bg-neutral shadow-sm" *ngIf="!!doc.notes?.length"> 
+      </div>
+      <div class="row custm-doc-row-note custm-bg-neutral shadow-sm" *ngIf="!!doc.notes?.length">
         <ul class="" dnd-sortable-container [sortableData]="doc.notes">
           <li *ngFor="let note of doc.notes; let i = index" dnd-sortable [sortableIndex]="i" (onDropSuccess)="onDropSuccess()">
             <div class="custm-doc-note custm-zone-note" (click)="selectedNote.isEmpty() && selectNote($event, note, i)" (clickOutside)="updateNote()" [attachOutsideOnClick]="true" style="overflow:auto">
@@ -38,20 +36,20 @@
 
           </li>
         </ul>
-      </div> -->
+      </div>
 
     </div>
 
-    <!-- <context-menu #labelMenu [useBootstrap4]="true">
+    <context-menu #labelMenu [useBootstrap4]="true">
       <div class="list-group" *ngFor="let itemx of labels">
         <ng-template class="list-group-item" style="color:red;" contextMenuItem [subMenu]="labelList">{{itemx.type}}</ng-template>
         <context-menu #labelList>
           <ng-template *ngFor="let itemy of itemx.list" contextMenuItem let-item (execute)="updateLabel(itemy.code_label)"><span>{{itemy.designation}}</span></ng-template>
         </context-menu>
       </div>
-    </context-menu> -->
+    </context-menu>
 
-    <!-- <context-menu #basicMenu [useBootstrap4]="true">
+    <context-menu #basicMenu [useBootstrap4]="true">
       <div class="dropdown ngx-contextmenu">
         <ng-template contextMenuItem [subMenu]="noteMenu" [enabled]="!!doc.index?.uuid"><span [class.custm-disabled]="!(!!doc.index?.uuid)">Add Note</span></ng-template>
         <context-menu #noteMenu>
@@ -78,7 +76,7 @@
         <ng-template contextMenuItem (execute)="deleteDocument()" *ngIf=selectedNote.isEmpty()><span [class.custm-disabled]="!(!selectedToMove)">Delete document</span></ng-template>
         <ng-template contextMenuItem (execute)="deleteDocumentAndDescendant()" *ngIf=selectedNote.isEmpty()><span [class.custm-disabled]="!(!selectedToMove)">Delete document and descendant</span></ng-template>
       </div>
-    </context-menu> -->
+    </context-menu>
 
-  </div>
+  </div> -->
   <!-- END NOTES -->
