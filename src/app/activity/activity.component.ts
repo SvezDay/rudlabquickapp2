@@ -34,7 +34,7 @@ export class ActivityComponent implements OnInit {
   @Output() public move: EventEmitter<any> = new EventEmitter();
 
   private component_name = "activiy";
-  public doc: ExtendGraph;
+  public doc: ExtendGraph = new ExtendGraph();
   public originalNoteOrder: any = {};
   public selectedNote: Note;
   public selectedNoteLabel: any = {};

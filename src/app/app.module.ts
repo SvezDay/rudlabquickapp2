@@ -37,6 +37,8 @@ import { TableComponent } from './table/table.component';
 import {GamesComponent} from './games/games.component';
 import {GamesRecallOneComponent} from './games-recall-one/games-recall-one.component';
 import { AdminComponent } from './admin/admin.component';
+import { ActivityComponent } from './activity/activity.component';
+import { ActivityRootComponent } from './activity-root/activity-root.component';
 
 // DIRECTIVES
 import {AutosizeDirective} from './_directives/autosize.directive';
@@ -44,7 +46,6 @@ import {TabulationDirective} from './_directives/tabulation.directive';
 import {ClickOutsideDirective} from './_directives/clickOutside.directive';
 import {LabelComponent} from './_directives/label.directive';
 import {ModelIconComponent} from './_directives/model-icon.component';
-import { ActivityComponent } from './activity/activity.component';
 
 
 @NgModule({
@@ -76,12 +77,14 @@ import { ActivityComponent } from './activity/activity.component';
     , GamesComponent
     , GamesRecallOneComponent
     , AdminComponent
+    , ActivityComponent
+    , ActivityRootComponent
     // DIRECTIVES
     , AutosizeDirective
     , TabulationDirective
     , ClickOutsideDirective
     , LabelComponent
-    , ModelIconComponent, ActivityComponent
+    , ModelIconComponent, ActivityComponent, ActivityRootComponent
     // LIBS
     // , ContextMenuComponent
   ]

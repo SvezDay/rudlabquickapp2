@@ -4,3 +4,5 @@
 @import '~bootstrap/scss/_functions';
 @import '~bootstrap/scss/_variables';
 @import '~bootstrap/scss/mixins/_breakpoints';
+
+body { height: 100%; overflow:hidden; }
