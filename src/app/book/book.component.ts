@@ -11,10 +11,7 @@ import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
 import {UtilsService} from '../_core/utils.service';
 import {IntercomService} from '../_core/intercom.service';
-//DIRECTIVES
-import {AutosizeDirective} from '../_directives/autosize.directive';
-import {TabulationDirective} from '../_directives/tabulation.directive';
-import {LabelComponent} from '../_directives/label.directive';
+
 //CLASSES
 // import {Index, Title, Note, HeadGraph, ExtendGraph} from '../_models/common.class';
 import {Uuid, Index, Title, Note} from '../_models/node.class';
@@ -228,11 +225,12 @@ export class BookComponent implements AfterViewInit {
     this.selectedNote = new Note();
     // console.log("this.selectedNote.isEmpty()", this.selectedNote.isEmpty())
   }
-  toggleCourseStatus(status, des){
+  togglerecallableStatus(status, des){
     let params = {idx_uuid:this.doc.index.uuid, status, des}
     // console.log('params', params)
-    this.Api.query('put', '/api/games-recall-one/status', params).subscribe( () => {
-      this.doc.title.course = status;
+    // this.Api.query('put', '/api/games-recall-one/status', params).subscribe( () => {
+    this.Api.query('put', '/api/games/update-recallable-state', params).subscribe( () => {
+      this.doc.title.recallable = status;
     }, error => {console.log(error)});
   }
 

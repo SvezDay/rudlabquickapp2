@@ -24,7 +24,9 @@ export class Graph {
 export class HeadGraph {
   index:Index;
   title:Title;
-  setHeadGraph(i:Index, t:Title){ this.index=i; this.title=t; }
+  setHeadGraph(i:Index, t:Title){
+    this.index.createIndex(i); this.title.createTitle(t);
+  }
   setRoot(){
     this.title.setValue('Home');
   }
@@ -78,7 +80,7 @@ export class ExtendGraph {
     if(!(obj.title instanceof Title)){
       t = new Title();
       t.createTitle(obj.title);
-      console.log('check title', t)
+      // console.log('check title', t)
     }
     if(obj.notes === 'undefined'){
       this.setExtendGraph(i, t);

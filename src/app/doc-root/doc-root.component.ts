@@ -6,8 +6,7 @@ declare var $: any;
 //SERVICES
 import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
-//DIRECTIVES
-import {ModelIconComponent} from '../_directives/model-icon.component';
+
 //CLASSES
 import {Graph, HeadGraph} from '../_models/graph.class';
 
@@ -40,7 +39,7 @@ export class DocRootComponent implements OnInit {
   public addDocument(model:string) :void{
     // console.log('data.data', data.data)
     this.Api.query('post', '/api/document/create-document', {model:model}).subscribe( data => {
-      console.log('data.data', data.data)
+      // console.log('data.data', data.data)
       let d = new HeadGraph();
       d.createHeadGraph(data.data)
       this.list.push(d);
@@ -49,9 +48,9 @@ export class DocRootComponent implements OnInit {
   public getMain():void{
     this.Api.query('get', '/api/document/get-main').subscribe(data=>{
 
-      console.log('data.data', data.data)
+      // console.log('data.data', data.data)
       this.list = this.g.createHeadGraphArray(data.data);
-      console.log("list", this.list)
+      // console.log("list", this.list)
     }, error => {console.log(error)})
   }
   public onDocument(ev:Event,item:HeadGraph):void{

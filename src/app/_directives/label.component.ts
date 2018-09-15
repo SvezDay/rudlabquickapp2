@@ -16,7 +16,7 @@ export class LabelComponent implements OnInit{
   ngOnInit(){
 
     // console.log("this.labelInst.getLabelByCode(this.code_label)", this.common.getLabelByCode(this.code_label))
-    console.log("label directive code_label", this.code_label)
+    // console.log("label directive code_label", this.code_label)
     this.designation = this.common.getLabelByCode(this.code_label).designation;
     // let ac = (this.code_label+"").split(".");
     // let code_type = Number.parseInt(ac[0]);

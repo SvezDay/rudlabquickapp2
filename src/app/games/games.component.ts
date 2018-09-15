@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 import {Location} from '@angular/common';
 import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';

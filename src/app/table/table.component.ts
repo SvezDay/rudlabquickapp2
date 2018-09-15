@@ -12,10 +12,7 @@ import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
 import {UtilsService} from '../_core/utils.service';
 import {IntercomService} from '../_core/intercom.service';
-//DIRECTIVES
-import {AutosizeDirective} from '../_directives/autosize.directive';
-import {TabulationDirective} from '../_directives/tabulation.directive';
-import {LabelComponent} from '../_directives/label.directive';
+
 //CLASSES
 // import {Index, Title, Note, HeadGraph, ExtendGraph} from '../_models/common.class';
 import {Uuid, Index, Title, Note} from '../_models/node.class';

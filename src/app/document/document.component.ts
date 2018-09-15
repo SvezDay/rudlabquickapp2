@@ -7,8 +7,7 @@ declare var $: any;
 import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
 import {UtilsService} from '../_core/utils.service';
-//DIRECTIVES
-import {ModelIconComponent} from '../_directives/model-icon.component';
+
 //CLASSES
 import {Uuid} from '../_models/node.class';
 import {HeadGraph, Tree} from '../_models/graph.class';
@@ -40,13 +39,13 @@ export class DocumentComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-      console.log("check ngOnInit() DocumentComponent")
+      // console.log("check ngOnInit() DocumentComponent")
       this.path = this.Nav.getPath(); //Init the path localStorage if necessary
       // console.log('before this.Nav.getLastInPath()', this.Nav.getLastInPath())
       this.documentLastOfPath = new HeadGraph();
       let lip=this.Nav.getLastInPath();
       this.documentLastOfPath.setHeadGraph(lip.index, lip.title);
-      console.log(' this.documentLastOfPath before createInstance', this.documentLastOfPath)
+      // console.log(' this.documentLastOfPath before createInstance', this.documentLastOfPath)
 
     }
 

@@ -6,7 +6,7 @@ import {IntercomService} from '../_core/intercom.service';
 import {UtilsService} from '../_core/utils.service';
 import {ApiService} from '../_core/api.service';
 //DIRECTIVE
-import {LabelComponent} from '../_directives/label.directive';
+// import {LabelComponent} from '../_directives/label.directive';
 //CLASS
 import {SetGame} from '../_models/graph.class';
 

@@ -12,9 +12,9 @@ import {DndModule} from 'ng2-dnd'; //Drag and drop
 import {ContextMenuModule, ContextMenuService, ContextMenuComponent} from 'ngx-contextmenu';
 
 // MODULES
-import {AppRoutingModule} from './app-routing.module';
 import {MaterialModule} from './material.module';
-
+import {AppRoutingModule} from './app-routing.module';
+import {GamesModule} from './games/games.module';
 
 // SERVICES
 import {ApiService} from './_core/api.service';
@@ -34,18 +34,14 @@ import {FreeComponent} from './free/free.component';
 import {DicoComponent} from './dico/dico.component';
 import { BookComponent } from './book/book.component';
 import { TableComponent } from './table/table.component';
-import {GamesComponent} from './games/games.component';
-import {GamesRecallOneComponent} from './games-recall-one/games-recall-one.component';
 import { AdminComponent } from './admin/admin.component';
 import { ActivityComponent } from './activity/activity.component';
 import { ActivityRootComponent } from './activity-root/activity-root.component';
 
+
 // DIRECTIVES
-import {AutosizeDirective} from './_directives/autosize.directive';
-import {TabulationDirective} from './_directives/tabulation.directive';
-import {ClickOutsideDirective} from './_directives/clickOutside.directive';
-import {LabelComponent} from './_directives/label.directive';
-import {ModelIconComponent} from './_directives/model-icon.component';
+import {DirectivesModule} from './_directives/_directives.module';
+
 
 
 @NgModule({
@@ -55,14 +51,16 @@ import {ModelIconComponent} from './_directives/model-icon.component';
     , FormsModule
     , ReactiveFormsModule
     , BrowserAnimationsModule
-    , AppRoutingModule
     , MaterialModule
+    , AppRoutingModule
+    , GamesModule
     // LIBS
     , ClickOutsideModule
     , Ng4LoadingSpinnerModule.forRoot()
     , DndModule.forRoot()
     // , ContextMenu
     , ContextMenuModule.forRoot()
+    , DirectivesModule
   ]
   ,declarations: [
     AppComponent
@@ -74,24 +72,13 @@ import {ModelIconComponent} from './_directives/model-icon.component';
     , BookComponent
     , TableComponent
     , DicoComponent
-    , GamesComponent
-    , GamesRecallOneComponent
     , AdminComponent
     , ActivityComponent
     , ActivityRootComponent
-    // DIRECTIVES
-    , AutosizeDirective
-    , TabulationDirective
-    , ClickOutsideDirective
-    , LabelComponent
-    , ModelIconComponent, ActivityComponent, ActivityRootComponent
     // LIBS
     // , ContextMenuComponent
   ]
   ,exports:[
-    AutosizeDirective
-    , TabulationDirective
-    , ClickOutsideDirective
   ]
   ,providers: [AuthenticationService, AuthGuard, UtilsService, IntercomService
     ,{provide:APP_BASE_HREF, useValue:'/'}

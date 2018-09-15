@@ -7,8 +7,7 @@ declare var $: any;
 import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
 import {UtilsService} from '../_core/utils.service';
-//DIRECTIVES
-import {AutosizeDirective} from '../_directives/autosize.directive';
+
 //CLASSES
 import {Index, Title, Note} from '../_models/node.class';
 import {HeadGraph, ExtendGraph, RowGraph, ExtendHeadGraph, ExtendColumnGraph} from '../_models/graph.class';
@@ -194,9 +193,10 @@ export class DicoComponent implements OnInit {
     }
   }
 
-  toggleCourseStatus(status:boolean, descendant:boolean):void{
-    this.Api.query('put', '/api/games-recall-one/status', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
-      this.ehg.title.course = status;
+  togglerecallableStatus(status:boolean, descendant:boolean):void{
+    // this.Api.query('put', '/api/games-recall-one/status', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
+    this.Api.query('put', '/api/games/update-recallable-state', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
+      this.ehg.title.recallable = status;
     }, error => {console.log(error)});
   }
 

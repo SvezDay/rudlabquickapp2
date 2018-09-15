@@ -19,27 +19,29 @@ export class Index {
 export class Title {
   uuid: string;
   value: string;
-  course:boolean;
+  recallable:boolean;
+  code_label:number;
   descendant:HeadGraph[]=[];
   setUuid(u:string){this.uuid=u};
   setValue(v:string){this.value=v};
-  setCourse(c:boolean){this.course=c};
+  setrecallable(r:boolean){this.recallable=r};
+  setCodeLabel(c:number){this.code_label=c};
   setDescendant(d:HeadGraph[]){this.descendant=d};
-  setTitle(u:string, v:string, c:boolean, d?:HeadGraph[]){
-    this.setUuid(u); this.setValue(v); this.setCourse(c);
+  setTitle(u:string, v:string, r:boolean, c:number, d?:HeadGraph[]){
+    this.setUuid(u); this.setValue(v); this.setrecallable(r); this.setCodeLabel(c);
     typeof d !== 'undefined' ? this.setDescendant(d) : null
   }
   createTitle(obj){
     if(typeof obj.descendant !== 'undefined'){
-      this.setTitle(obj.uuid, obj.value, obj.course, obj.descendant);
+      this.setTitle(obj.uuid, obj.value, obj.recallable, obj.code_label, obj.descendant);
     }else{
-      this.setTitle(obj.uuid, obj.value, obj.course);
+      this.setTitle(obj.uuid, obj.value, obj.recallable, obj.code_label);
     }
   }
   isEmpty(){
     return this.uuid == "" ? true : false
   }
-  constructor(){this.uuid=""; this.value=""; this.course=false; this.descendant=[]; }
+  constructor(){this.uuid=""; this.value=""; this.recallable=false; this.code_label=1.2; this.descendant=[]; }
 }
 export class Note {
   uuid: string;
