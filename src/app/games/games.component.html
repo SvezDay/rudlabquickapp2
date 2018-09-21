@@ -26,7 +26,7 @@
           <a class="list-group-item list-group-item-action" >Find the good answer</a>
           <a class="list-group-item list-group-item-action" >Create game</a>
           <a class="list-group-item list-group-item-action" >
-            <span>Update Brut Data</span>
+            <span>Update Brut Data</span><span style="color:grey;"> from the _data folder</span>
             <form #f="ngForm" (ngSubmit)="updateBrutData()">
               <div class="form-group" style="display:inline-block; width:86%;">
                 <input type="text" class="form-control" id="name" name="name" required placeholder="File name" [(ngModel)]="file.name" #name="ngModel">
