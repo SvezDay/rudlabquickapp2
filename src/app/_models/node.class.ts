@@ -19,15 +19,15 @@ export class Index {
 export class Title {
   uuid: string;
   value: string;
-  recallable:boolean;
+  recallable:string;
   code_label:number;
   descendant:HeadGraph[]=[];
   setUuid(u:string){this.uuid=u};
   setValue(v:string){this.value=v};
-  setrecallable(r:boolean){this.recallable=r};
+  setrecallable(r:string){this.recallable=r};
   setCodeLabel(c:number){this.code_label=c};
   setDescendant(d:HeadGraph[]){this.descendant=d};
-  setTitle(u:string, v:string, r:boolean, c:number, d?:HeadGraph[]){
+  setTitle(u:string, v:string, r:string, c:number, d?:HeadGraph[]){
     this.setUuid(u); this.setValue(v); this.setrecallable(r); this.setCodeLabel(c);
     typeof d !== 'undefined' ? this.setDescendant(d) : null
   }
@@ -41,7 +41,7 @@ export class Title {
   isEmpty(){
     return this.uuid == "" ? true : false
   }
-  constructor(){this.uuid=""; this.value=""; this.recallable=false; this.code_label=1.2; this.descendant=[]; }
+  constructor(){this.uuid=""; this.value=""; this.recallable='false'; this.code_label=1.2; this.descendant=[]; }
 }
 export class Note {
   uuid: string;

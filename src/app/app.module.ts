@@ -15,6 +15,7 @@ import {ContextMenuModule, ContextMenuService, ContextMenuComponent} from 'ngx-c
 import {MaterialModule} from './material.module';
 import {AppRoutingModule} from './app-routing.module';
 import {GamesModule} from './games/games.module';
+import { SocketIoModule} from 'ng-socket-io';
 
 // SERVICES
 import {ApiService} from './_core/api.service';
@@ -42,8 +43,6 @@ import { ActivityRootComponent } from './activity-root/activity-root.component';
 // DIRECTIVES
 import {DirectivesModule} from './_directives/_directives.module';
 
-
-
 @NgModule({
   imports: [
     BrowserModule
@@ -58,6 +57,8 @@ import {DirectivesModule} from './_directives/_directives.module';
     , ClickOutsideModule
     , Ng4LoadingSpinnerModule.forRoot()
     , DndModule.forRoot()
+    , SocketIoModule
+    // , SocketIoConfig
     // , ContextMenu
     , ContextMenuModule.forRoot()
     , DirectivesModule

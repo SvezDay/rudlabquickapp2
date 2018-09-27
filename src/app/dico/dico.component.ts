@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angu
 import {ContextMenuService, ContextMenuComponent} from 'ngx-contextmenu';
 import 'rxjs/Rx';
 declare var $: any;
+import * as io from 'socket.io-client';
 //SERVICES
 import {ApiService} from '../_core/api.service';
 import {NavigationService} from '../_core/navigation.service';
@@ -30,13 +31,12 @@ export class DicoComponent implements OnInit {
   @Output() public move: EventEmitter<any> = new EventEmitter();
 
   private component_name = "dico";
+  private baseUrl = 'http://localhost:3200';
   public labels: any = [];
   public traductions: any = [];
-
   public ehg: ExtendHeadGraph = new ExtendHeadGraph();
   public ecg: any = [];
   public rg: RowGraph = new RowGraph();
-
   public selectedNoteLabel: any = {};
 
   constructor(
@@ -164,20 +164,10 @@ export class DicoComponent implements OnInit {
       }, error=> console.log(error));
     }
   }
-  public deleteDefinition():void{
-    this.Api.query('delete', '/api/dico/delete-definition', {def_uuid:this.rg.definition.uuid}).subscribe(()=>{
-      console.log('this.rg before', this.rg);
-      console.log('this.ecg before', this.ecg);
-      this.rg.setDefinition(new Note());
-      delete this.ecg[this.rg.index].definition;
-      console.log('this.rg after', this.rg);
-      console.log('this.ecg after', this.ecg);
-    }, error => {console.log(error)});
-  }
   public updateDefinitionValue():void{
     if(this.ecg[this.rg.index].definition.value!=this.rg.definition.value){
       if(!this.rg.definition.value.length){
-        console.log('check update definition is null');
+        // console.log('check update definition is null');
         this.deleteDefinition();
       }else{
         let params = {def_uuid:this.rg.definition.uuid, value:this.rg.definition.value};
@@ -193,18 +183,39 @@ export class DicoComponent implements OnInit {
     }
   }
 
-  togglerecallableStatus(status:boolean, descendant:boolean):void{
+  togglerecallableStatus(status:string, descendant:boolean):void{
     // this.Api.query('put', '/api/games-recall-one/status', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
-    this.Api.query('put', '/api/games/update-recallable-state', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
-      this.ehg.title.recallable = status;
-    }, error => {console.log(error)});
+    // this.Api.query('put', '/api/recall/update-recallable-state', {idx_uuid:this.ehg.index.uuid, status, descendant}).subscribe( () => {
+    //   this.ehg.title.recallable = status;
+    // }, error => {console.log(error)});
+    let socket = io(this.baseUrl+'/games');
+    socket.on('connect', ()=>{
+      // console.log('updateBrutData on connect')
+      socket.emit('update-recallable-state', {status:status, idx_uuid:this.hg.index.uuid, descendant:descendant, token:this.Api.getToken()});
+      socket.on('update-recallable-state-response', (s) => {
+        console.log('s',s)
+        if(s=='successed' || s== 'failed'){
+          socket.close();
+        }
+      });
+    })
   }
 
   // DELETE --------------------------------------------------------------------
 
   public deleteDocument():void{
-    this.Api.query('delete', '/api/dico/delete-dico', {idx_uuid:this.ehg.index.uuid}).subscribe(()=>{
+    this.Api.query('delete', '/api/document/delete-document', {idx_uuid:this.ehg.index.uuid}).subscribe(()=>{
       this.delHg.emit(null);
+    }, error => {console.log(error)});
+  }
+  public deleteDefinition():void{
+    this.Api.query('delete', '/api/dico/delete-definition', {def_uuid:this.rg.definition.uuid}).subscribe(()=>{
+      console.log('this.rg before', this.rg);
+      console.log('this.ecg before', this.ecg);
+      this.rg.setDefinition(new Note());
+      delete this.ecg[this.rg.index].definition;
+      console.log('this.rg after', this.rg);
+      console.log('this.ecg after', this.ecg);
     }, error => {console.log(error)});
   }
   public deleteRow():void{

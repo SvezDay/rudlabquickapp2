@@ -26,7 +26,7 @@ export class RecallComponent implements OnInit {
   }
   public getList():void{
     this.Api.query('get', '/api/recall/main-list').subscribe( data => {
-      // console.log('data', data);
+      console.log('data', data);
       this.list = data.data;
     })
   }

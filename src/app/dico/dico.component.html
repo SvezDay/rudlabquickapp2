@@ -85,9 +85,9 @@
       </context-menu>
       <ng-template contextMenuItem (execute)="move.emit({event:$event, idx_uuid:ehg.index.uuid})"><span [class.custm-disabled]="false">Select document to move</span></ng-template>
       <ng-template contextMenuItem [enabled]="true" (execute)="deleteDocument()"><span>Delete dico</span></ng-template>
-      <ng-template contextMenuItem (execute)="togglerecallableStatus(true, false)" *ngIf="!!ehg.index?.uuid && !ehg.title.recallable"><span [class.custm-disabled]="!(!selectedToMove )">Add in games</span></ng-template>
+      <ng-template contextMenuItem (execute)="togglerecallableStatus('true', false)" *ngIf="ehg.title.recallable=='false'"><span [class.custm-disabled]="!(!selectedToMove )">Add in games</span></ng-template>
       <!-- <ng-template contextMenuItem (execute)="togglerecallableStatus(true, true)" *ngIf="!!ehg.index?.uuid && !ehg.title.recallable"><span [class.custm-disabled]="!(!selectedToMove )">Add in games with dependancies</span></ng-template> -->
-      <ng-template contextMenuItem (execute)="togglerecallableStatus(false, false)" *ngIf="!!ehg.index?.uuid && ehg.title.recallable"><span [class.custm-disabled]="!(!selectedToMove )">Remove from games</span></ng-template>
+      <ng-template contextMenuItem (execute)="togglerecallableStatus('false', false)" *ngIf="ehg.title.recallable=='true'"><span [class.custm-disabled]="!(!selectedToMove )">Remove from games</span></ng-template>
       <!-- <ng-template contextMenuItem (execute)="togglerecallableStatus(false, true)" *ngIf="!!ehg.index?.uuid && ehg.title.recallable"><span [class.custm-disabled]="!(!selectedToMove )">Remove from games with dependancies</span></ng-template> -->
     </context-menu>
   </div>

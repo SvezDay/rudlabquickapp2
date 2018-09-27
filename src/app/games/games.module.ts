@@ -4,8 +4,11 @@ import {Routes, RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {DirectivesModule} from '../_directives/_directives.module';
+// import { SocketIoModule} from 'ng-socket-io';
+
 //SERVICE
 import {AuthGuard}            from '../_core/auth.guard';
+// import {GamesSocketService} from './games.component'
 
 import {GamesComponent} from './games.component';
 import { RecallComponent } from './recall/recall.component';
@@ -21,6 +24,7 @@ const routes: Routes = [
     , DirectivesModule
     , RouterModule.forChild(routes)
     , FormsModule
+    // , SocketIoModule
 
   ],
   declarations: [
@@ -28,5 +32,6 @@ const routes: Routes = [
     , RecallComponent
     , RecallCardComponent
   ]
+  // , providers:[GamesSocketService]
 })
 export class GamesModule { }

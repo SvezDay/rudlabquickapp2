@@ -42,7 +42,8 @@ export class RecallCardComponent implements OnInit {
   // }
   public scoring(state){
     this.Api.query('put', `/api/recall/scoring`, {state:state, recall_uuid:this.card.recall.uuid, level:this.card.recall.level}).subscribe( () => {
-        this.run();
+      this.getAnswer = false;
+      this.run();
     })
   }
   public next(){

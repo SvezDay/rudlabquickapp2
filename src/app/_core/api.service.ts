@@ -13,13 +13,13 @@ import {IntercomService} from './intercom.service';
 @Injectable()
 export class ApiService {
 
-  private api: any;
+  private domain: any;
 
   constructor( private http: HttpClient, private auth: AuthenticationService){
     if(environment.production){
-      this.api = 'https://rudlabquickapi.herokuapp.com';
+      this.domain = 'https://rudlabquickapi.herokuapp.com';
     }else{
-      this.api = 'http://localhost:3200';
+      this.domain = 'http://localhost:3200';
     }
 
   }
@@ -28,7 +28,7 @@ export class ApiService {
   }
   query(verb, route, ...param) {
     if(verb == 'get' || verb == 'delete'){
-      return this.http[verb](`${this.api}${route}`, {headers: this.jwt(...param)})
+      return this.http[verb](`${this.domain}${route}`, {headers: this.jwt(...param)})
       .pipe(
         tap( response => {
           // console.log("api service response", response)
@@ -39,7 +39,7 @@ export class ApiService {
         // catchError(this.handleError(e)) })
       );
     }else{
-      return this.http[verb](`${this.api}${route}`, param[0] || {}, {headers: this.jwt()})
+      return this.http[verb](`${this.domain}${route}`, param[0] || {}, {headers: this.jwt()})
       .pipe(
         tap( response => {
           // console.log("api service response bis", response)
@@ -70,5 +70,8 @@ export class ApiService {
       // console.log("api service by console headers", headers)
       return headers;
   };
+  public getToken():any{
+    return localStorage.getItem('rudlab_token');
+  }
 
 };

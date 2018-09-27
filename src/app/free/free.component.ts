@@ -240,7 +240,7 @@ export class FreeComponent implements AfterViewInit {
   // DELETE --------------------------------------------------------------------
 
   public deleteDocument(){
-    console.log("this.doc.index", this.doc.index)
+    // console.log("this.doc.index", this.doc.index)
     this.Api.query('delete', '/api/document/delete-document', {idx_uuid:this.doc.index.uuid}).subscribe( () => {
         this.delHg.emit(null)
     }, error => {console.log(error)});

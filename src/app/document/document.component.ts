@@ -36,7 +36,9 @@ export class DocumentComponent implements OnInit {
       , private Nav: NavigationService
       , public Utils:UtilsService
       , private contextMenuService:ContextMenuService
-    ) { }
+    ) {
+      
+    }
 
     ngOnInit() {
       // console.log("check ngOnInit() DocumentComponent")

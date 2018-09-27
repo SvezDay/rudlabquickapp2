@@ -6,9 +6,10 @@
       <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
         <h5>Empty document</h5>
       </div>
-
+      
       <!-- <div class="custm-doc-collection" *ngIf="doc.title?.descendant && !!doc.title?.descendant.length"> -->
       <div class="custm-doc-collection">
+        <h6 *ngIf="doc.title?.recallable=='ongoing'">Recallable state ongoing</h6>
         <ul class="">
           <li *ngFor="let item of doc.title?.descendant">
             <a class="btn"  (click)="onDocument(item)"><ModelIcon [model]="item.index.model"></ModelIcon> {{item.title?.value}}</a>
@@ -75,9 +76,10 @@
         <!-- <ng-template contextMenuItem (execute)="moveIn()" *ngIf="!!selectedToMove && selectedNote.isEmpty()"><span [class.custm-disabled]="!(!!selectedToMove && selectedNote.isEmpty())">Set All Here</span></ng-template>
         <ng-template contextMenuItem (execute)="moveIn()" *ngIf="!!selectedToMove && !selectedNote.isEmpty()"><span [class.custm-disabled]="!(!!selectedToMove && !selectedNote.isEmpty())">Set Note Here</span></ng-template> -->
         <!-- <ng-template contextMenuItem><span style="color:gainsboro">GAMING</span></ng-template> -->
-        <ng-template contextMenuItem (execute)="togglerecallableStatus(true, false)" *ngIf="!!doc.index?.uuid && !doc.title.recallable"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Add in games</span></ng-template>
+
+        <ng-template contextMenuItem (execute)="togglerecallableStatus('true', false)" *ngIf="doc.title.recallable=='false'"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Add in games</span></ng-template>
         <!-- <ng-template contextMenuItem (execute)="togglerecallableStatus(true, true)" *ngIf="!!doc.index?.uuid && !doc.title.recallable"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Add in games with dependancies</span></ng-template> -->
-        <ng-template contextMenuItem (execute)="togglerecallableStatus(false, false)" *ngIf="!!doc.index?.uuid && doc.title.recallable"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Remove from games</span></ng-template>
+        <ng-template contextMenuItem (execute)="togglerecallableStatus('false', false)" *ngIf="doc.title.recallable=='true'"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Remove from games</span></ng-template>
         <!-- <ng-template contextMenuItem (execute)="togglerecallableStatus(false, true)" *ngIf="!!doc.index?.uuid && doc.title.recallable"><span [class.custm-disabled]="!(!selectedToMove && selectedNote.isEmpty())">Remove from games with dependancies</span></ng-template> -->
         <ng-template contextMenuItem (execute)="deleteNote()" *ngIf="!selectedNote.isEmpty()"><span [class.custm-disabled]="!(!selectedToMove && !!doc.index?.uuid)">delete note</span></ng-template>
         <ng-template contextMenuItem (execute)="deleteDocument()" *ngIf=selectedNote.isEmpty()><span [class.custm-disabled]="!(!selectedToMove)">Delete document</span></ng-template>

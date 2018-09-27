@@ -237,7 +237,7 @@ export class BookComponent implements AfterViewInit {
   // DELETE --------------------------------------------------------------------
 
   public deleteDocument(){
-    this.Api.query('delete', '/api/free/delete-graph', this.doc.index).subscribe( () => {
+    this.Api.query('delete', '/api/document/delete-document', {idx_uuid:this.doc.index}).subscribe( () => {
         this.delHg.emit(null)
     }, error => {console.log(error)});
   }
