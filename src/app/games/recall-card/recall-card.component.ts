@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 //SERVICE
 import {ApiService} from '../../_core/api.service';
 //CLASS
@@ -19,6 +19,18 @@ export class RecallCardComponent implements OnInit {
   private getAnswer: boolean = false;
 
   constructor(private Api: ApiService) { }
+  @HostListener('window:keydown', ['$event'])
+    keyEvent(event:any) {
+      if(event.key=="ArrowDown"){
+        this.next();
+      }
+      if(event.key=="ArrowRight"){
+        this.scoring("win");
+      }
+      if(event.key=="ArrowLeft"){
+        this.scoring("lose");
+      }
+    }
 
   ngOnInit() :void{
     this.index.createIndex(this.idx);
