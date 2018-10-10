@@ -2,6 +2,7 @@
   "name": "rudlabquickapp2",
   "version": "0.0.0",
   "license": "MIT",
+  "main":"server.js",
   "scripts": {
     "ng": "ng",
     "//": "node server.js",
@@ -10,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "grunt sass:production && ng build --aot -prod"
   },
   "config": {
     "production": true
