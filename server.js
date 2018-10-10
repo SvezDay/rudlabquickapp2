@@ -16,4 +16,4 @@ const port = process.env.PORT || 4200;
 app.set('port', port);
 
 const server = http.createServer(app);
-server.listen(port, '0.0.0.0', ()=>{console.log('Running on the port 4200')});
+server.listen(port, ()=>{console.log('Running on the port 4200')});
