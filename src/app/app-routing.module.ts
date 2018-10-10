@@ -18,8 +18,9 @@ const routes: Routes = [
    ,{path: 'authenticate', component: AuthenticateComponent}
    ,{path: 'document', component: DocumentComponent, canActivate: [AuthGuard]} // AS ROOT DOCUMENT COMPONENT
    // ,{path: 'games', loadChildren: ()=> GamesModule , canActivate: [AuthGuard]}
+   // ,{path: 'games', loadChildren: ()=> GamesModule}
    // ,{path: 'games', loadChildren: GamesModule , canActivate: [AuthGuard]}
-   ,{path: 'games', loadChildren: ()=> GamesModule}
+   ,{path: 'games', loadChildren: 'app/games/games.module#GamesModule' , canActivate: [AuthGuard]}
    // ,{path: 'games-recall-one', component: GamesRecallOneComponent, canActivate: [AuthGuard]}
    ,{path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
    ,{path: 'activity', component: ActivityComponent, canActivate: [AuthGuard]}
