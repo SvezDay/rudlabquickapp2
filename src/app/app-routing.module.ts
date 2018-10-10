@@ -16,7 +16,7 @@ const routes: Routes = [
    {path: '', component: HomeComponent}
    ,{path: 'authenticate', component: AuthenticateComponent}
    ,{path: 'document', component: DocumentComponent, canActivate: [AuthGuard]} // AS ROOT DOCUMENT COMPONENT
-   ,{path: 'games', loadChildren: function(){return GamesModule} , canActivate: [AuthGuard]}
+   ,{path: 'games', loadChildren: ()=>{return GamesModule} , canActivate: [AuthGuard]}
    // ,{path: 'games', loadChildren: ()=> GamesModule}
    // ,{path: 'games', loadChildren: GamesModule , canActivate: [AuthGuard]}
    // ,{path: 'games', loadChildren: 'app/games/games.module#GamesModule'}
