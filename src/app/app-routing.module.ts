@@ -8,7 +8,6 @@ import {HomeComponent} from './home/home.component';
 import {AuthenticateComponent} from './authenticate/authenticate.component';
 import {DocumentComponent} from './document/document.component';
 // import {GamesComponent} from './games/games.component';
-// import {GamesRecallOneComponent} from './games-recall-one/games-recall-one.component';
 import { AdminComponent } from './admin/admin.component';
 import { ActivityComponent } from './activity/activity.component';
 
@@ -17,11 +16,10 @@ const routes: Routes = [
    {path: '', component: HomeComponent}
    ,{path: 'authenticate', component: AuthenticateComponent}
    ,{path: 'document', component: DocumentComponent, canActivate: [AuthGuard]} // AS ROOT DOCUMENT COMPONENT
-   // ,{path: 'games', loadChildren: ()=> GamesModule , canActivate: [AuthGuard]}
+   ,{path: 'games', loadChildren: ()=> GamesModule , canActivate: [AuthGuard]}
    // ,{path: 'games', loadChildren: ()=> GamesModule}
    // ,{path: 'games', loadChildren: GamesModule , canActivate: [AuthGuard]}
-   ,{path: 'games', loadChildren: 'app/games/games.module#GamesModule' , canActivate: [AuthGuard]}
-   // ,{path: 'games-recall-one', component: GamesRecallOneComponent, canActivate: [AuthGuard]}
+   // ,{path: 'games', loadChildren: 'app/games/games.module#GamesModule'}
    ,{path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
    ,{path: 'activity', component: ActivityComponent, canActivate: [AuthGuard]}
 

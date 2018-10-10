@@ -51,7 +51,6 @@ import {DirectivesModule} from './_directives/_directives.module';
     , ReactiveFormsModule
     , BrowserAnimationsModule
     , MaterialModule
-    , AppRoutingModule
     , GamesModule
     // LIBS
     , ClickOutsideModule
@@ -62,6 +61,7 @@ import {DirectivesModule} from './_directives/_directives.module';
     // , ContextMenu
     , ContextMenuModule.forRoot()
     , DirectivesModule
+    , AppRoutingModule
   ]
   ,declarations: [
     AppComponent

@@ -22,8 +22,8 @@ const routes: Routes = [
   imports: [
     CommonModule
     , DirectivesModule
-    , RouterModule.forChild(routes)
     , FormsModule
+    , RouterModule.forChild(routes)
     // , SocketIoModule
 
   ],
