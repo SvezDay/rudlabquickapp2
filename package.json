@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "grunt sass:production && ng build --aot -prod"
+    "//": "grunt sass:production && ng build --aot -prod",
+    "postinstall": "ng build --aot -prod"
   },
   "config": {
     "production": true
