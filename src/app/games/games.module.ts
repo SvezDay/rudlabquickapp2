@@ -21,9 +21,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule
+    , RouterModule.forChild(routes)
     , DirectivesModule
     , FormsModule
-    , RouterModule.forChild(routes)
     // , SocketIoModule
 
   ],

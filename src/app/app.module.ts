@@ -46,12 +46,13 @@ import {DirectivesModule} from './_directives/_directives.module';
 @NgModule({
   imports: [
     BrowserModule
+    , AppRoutingModule
     , HttpClientModule
     , FormsModule
     , ReactiveFormsModule
     , BrowserAnimationsModule
     , MaterialModule
-    , GamesModule
+    // , GamesModule
     // LIBS
     , ClickOutsideModule
     , Ng4LoadingSpinnerModule.forRoot()
@@ -61,7 +62,6 @@ import {DirectivesModule} from './_directives/_directives.module';
     // , ContextMenu
     , ContextMenuModule.forRoot()
     , DirectivesModule
-    , AppRoutingModule
   ]
   ,declarations: [
     AppComponent
