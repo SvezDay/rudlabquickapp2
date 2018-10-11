@@ -11,12 +11,15 @@ import {DocumentComponent} from './document/document.component';
 import { AdminComponent } from './admin/admin.component';
 import { ActivityComponent } from './activity/activity.component';
 
+export function loadGames() {
+  return GamesModule;
+}
 
 const routes: Routes = [
    {path: '', component: HomeComponent}
    ,{path: 'authenticate', component: AuthenticateComponent}
    ,{path: 'document', component: DocumentComponent, canActivate: [AuthGuard]} // AS ROOT DOCUMENT COMPONENT
-   ,{path: 'games', loadChildren: ()=>{return GamesModule} , canActivate: [AuthGuard]}
+   ,{path: 'games', loadChildren: loadGames , canActivate: [AuthGuard]}
    // ,{path: 'games', loadChildren: ()=> GamesModule}
    // ,{path: 'games', loadChildren: GamesModule , canActivate: [AuthGuard]}
    // ,{path: 'games', loadChildren: 'app/games/games.module#GamesModule'}
