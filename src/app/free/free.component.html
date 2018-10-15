@@ -6,10 +6,10 @@
       <div *ngIf="!doc.title?.descendant.length && !doc.notes?.length" class="" style="text-align:center;">
         <h5>Empty document</h5>
       </div>
-      
+
       <!-- <div class="custm-doc-collection" *ngIf="doc.title?.descendant && !!doc.title?.descendant.length"> -->
       <div class="custm-doc-collection">
-        <h6 *ngIf="doc.title?.recallable=='ongoing'">Recallable state ongoing</h6>
+        <h6 *ngIf="doc?.title?.recallable=='ongoing'">Recallable state ongoing</h6>
         <ul class="">
           <li *ngFor="let item of doc.title?.descendant">
             <a class="btn"  (click)="onDocument(item)"><ModelIcon [model]="item.index.model"></ModelIcon> {{item.title?.value}}</a>

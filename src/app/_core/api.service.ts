@@ -21,6 +21,7 @@ export class ApiService {
     }else{
       this.domain = 'http://localhost:3200';
     }
+    console.log("this.domain", this.domain)
 
   }
   private handleError(error: any){

@@ -14,7 +14,7 @@ import {ContextMenuModule, ContextMenuService, ContextMenuComponent} from 'ngx-c
 // MODULES
 import {MaterialModule} from './material.module';
 import {AppRoutingModule} from './app-routing.module';
-import {GamesModule} from './games/games.module';
+// import {GamesModule} from './games/games.module';
 import { SocketIoModule} from 'ng-socket-io';
 
 // SERVICES
@@ -52,7 +52,7 @@ import {DirectivesModule} from './_directives/_directives.module';
     , ReactiveFormsModule
     , BrowserAnimationsModule
     , MaterialModule
-    // , GamesModule
+    // , GamesModule.forRoot()
     // LIBS
     , ClickOutsideModule
     , Ng4LoadingSpinnerModule.forRoot()

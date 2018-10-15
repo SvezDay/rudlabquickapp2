@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {AuthGuard}            from './_core/auth.guard';
-import {GamesModule} from './games/games.module';
+// import {GamesModule} from './games/games.module';
 
 import {HomeComponent} from './home/home.component';
 import {AuthenticateComponent} from './authenticate/authenticate.component';
@@ -11,9 +11,9 @@ import {DocumentComponent} from './document/document.component';
 import { AdminComponent } from './admin/admin.component';
 import { ActivityComponent } from './activity/activity.component';
 
-export function loadGames() {
-  return GamesModule;
-}
+// export function loadGames() {
+//   return GamesModule;
+// }
 
 const routes: Routes = [
    {path: '', component: HomeComponent}

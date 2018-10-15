@@ -48,7 +48,7 @@ export class DocRootComponent implements OnInit {
   public getMain():void{
     this.Api.query('get', '/api/document/get-main').subscribe(data=>{
 
-      // console.log('data.data', data.data)
+      console.log('data.data', data.data)
       this.list = this.g.createHeadGraphArray(data.data);
       // console.log("list", this.list)
     }, error => {console.log(error)})
