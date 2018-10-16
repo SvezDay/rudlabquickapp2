@@ -13,6 +13,8 @@ import {UtilsService} from '../_core/utils.service';
 import {Index, Title, Note} from '../_models/node.class';
 import {HeadGraph, ExtendGraph, RowGraph, ExtendHeadGraph, ExtendColumnGraph} from '../_models/graph.class';
 import {Common} from '../_models/common.data';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   moduleId:module.id
@@ -31,7 +33,8 @@ export class DicoComponent implements OnInit {
   @Output() public move: EventEmitter<any> = new EventEmitter();
 
   private component_name = "dico";
-  private baseUrl = 'http://localhost:3200';
+  // private baseUrl = 'http://localhost:3200';
+  private baseUrl:string = environment.apiAddress;
   public labels: any = [];
   public traductions: any = [];
   public ehg: ExtendHeadGraph = new ExtendHeadGraph();
@@ -48,7 +51,7 @@ export class DicoComponent implements OnInit {
     let common = new Common();
     this.labels = common.getLabelsByType(this.component_name);
     this.traductions = common.getLabelsByType("language");
-    // console.log(this.traductions)
+    console.log("this.baseUrl", this.baseUrl)
   }
 
   ngOnInit() {
