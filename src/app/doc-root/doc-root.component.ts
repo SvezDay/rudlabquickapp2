@@ -53,10 +53,10 @@ export class DocRootComponent implements OnInit {
       // console.log("list", this.list)
     }, error => {console.log(error)})
   }
-  public onDocument(ev:Event,item:HeadGraph):void{
+  public onDocument(item:HeadGraph):void{
     // console.log('onDocument(ev:Event,item:HeadGraph)', ev)
     // console.log('onDocument(ev:Event,item:HeadGraph)', item)
-    this.addHg.emit({ event:event, item:item });
+    this.addHg.emit({item:item });
   }
 
 }

@@ -5,7 +5,7 @@
 
   <div class="custm-doc-collection">
     <div *ngFor="let item of list">
-      <a class="btn"  (click)="onDocument($event, item)"><ModelIcon [model]="item.index.model"></ModelIcon>{{item.title?.value}}</a>
+      <a class="btn"  (click)="onDocument(item)"><ModelIcon [model]="item.index.model"></ModelIcon>{{item.title?.value}}</a>
     </div>
   </div>
 

@@ -131,7 +131,7 @@ export class FreeComponent implements AfterViewInit {
 // READ   ----------------------------------------------------------------------
 
   public onDocument(next:HeadGraph):void{
-    this.addHg.emit({event:event, item:next});
+    this.addHg.emit({item:next});
   }
   getOrignalNote(){
     return this.doc.notes.filter( item => { return item.uuid == this.selectedNote.uuid })[0];
@@ -153,6 +153,7 @@ export class FreeComponent implements AfterViewInit {
     let el = $(`textarea#${note.uuid}`);
     let h = el.scrollHeight;
     el.height(h+15);
+    ev.preventDefault();
   }
   public selectNoteLabel(ev: MouseEvent, item: any, index:number):void{
     this.selectedNoteLabel = item;
